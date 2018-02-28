@@ -1,0 +1,98 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+}
+
+#container{
+	width: 970px;
+	padding: 25px 15px 25px 15px;
+}
+
+h2{
+	display: inline;
+}
+
+h3{
+	color:red;
+}
+
+h4{
+	margin: 5px 0px 5px 0px;
+}
+
+#register{
+	display: inline-block;
+	height: 450px;
+	width: 350px;
+	padding: 15px;
+	border: 2px solid black;
+	margin-top: 25px;
+}
+
+label{
+	display:block;
+	margin: 10px 0px 10px 0px;
+}
+
+input[type=text]{
+	align-content: right;
+}
+
+#login{
+	display: inline-block;
+	vertical-align: top;
+	height: 350px;
+	width: 350px;
+	padding: 15px;
+	border: 2px solid black;
+	margin-top: 25px;
+}
+
+input[type=submit]{
+	padding: 5px;
+	display: block;
+	margin-top: 10px;
+	background-color: lightblue;
+	border: 2px solid black;
+	box-shadow: 2px 2px;
+}
+
+#left_side{
+	display: inline-block;
+	width: 40%;
+	height: 750px;
+	padding: 2px;
+}
+
+#right_side{
+	display: inline-block;
+	width: 40%;
+	height: 750px;
+	padding: 2px;
+	vertical-align: top;
+}
+
+.sub_content{
+	width: 90%;
+	height: 75%;
+	overflow: scroll;
+	padding: 2px;
+}
+
+.quotes{
+	width: 90%;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 15px 0px 15px 0px;
+}
+
+h6{
+	display: inline;
+	font-style: italic;
+	margin-top: 5px;
+}
+
+#add{
+	margin-top: 100px;
+}

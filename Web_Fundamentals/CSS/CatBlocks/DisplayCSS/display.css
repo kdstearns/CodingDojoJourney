@@ -1,0 +1,42 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#header{
+	text-align: center;
+}
+
+#header h1{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 50px;
+}
+
+#main_content{
+	background-color: lightgrey;
+}
+
+.rows{
+	margin: 5px 25px 5px 25px;
+	text-align: center;
+}
+
+img{
+	margin: 5px;
+	padding: 15px;
+	border: 5px solid black;
+	width: 10%;
+}
+
+#domo{
+	height: 125px;
+}
+
+.blue{
+	background-color: #82b4ee;
+}
+
+.pink{
+	background-color: #f36870;
+}

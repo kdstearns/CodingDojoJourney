@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'review_app/reviews.css'%}">
+		<title> Add Review </title>
+	</head>
+	<body>
+		<div id='container'>
+			<div id='content'>
+				<div id="header2">
+					<a href="/success"> Home </a>
+					<a href="/logout"> Logout </a>
+				</div>
+				<div id ="left_side">
+					
+					<div id = "info">
+						<h2> {{ book.title }} </h2>
+						<p> Author: {{ author.name }} </p>
+						<h4> Reviews: </h4>
+							{% for element in review %}
+							<div id ="list">
+								<h5> Rating: {{ element.rating }} </h5>
+								<h5> <a href="/users/{{ element.reviewed_by.id }}"> {{ element.reviewed_by.alias}} </a> says: {{ element.review }} </h5>
+								<h6> Posted on {{ element.created_at }} </h6>
+								{% if element.reviewed_by.id == request.session.id %}
+								<h6> <a id="delete" href="/delete/{{ element.id }}/{{book.id}}"> Delete this Review</a> </h6>
+								{% endif %}
+							</div>
+							{% endfor %}
+					</div>
+
+				</div>
+				<div id ="right_side">
+					
+					<div id = "new">
+						<h4> Add a Review: </h4>
+						<form action="/addreview/{{ book.id }}" method="POST">
+						{% csrf_token %} 
+							<textarea name="review" rows="4"> </textarea>
+							<label> Rating: <select name = "rating">
+								<option>  </option>
+								<option> 1 </option>
+								<option> 2 </option>
+								<option> 3 </option>
+								<option> 4 </option>
+								<option> 5 </option>
+							</select></label>
+							<input type="submit" value="Submit Review">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>

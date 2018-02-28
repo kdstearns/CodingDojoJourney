@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'review_app/reviews.css'%}">
+		<title> User Reviews </title>
+	</head>
+	<body>
+		<div id='container'>
+			<div id='content'>
+				<div id="header2">
+					<a href="/success"> Home </a>
+					<a href="/books/add"> Add Book and Review </a>
+					<a href="/logout"> Logout </a>
+				</div>
+				<div id="user">
+					<h2> User Alias: {{ show.alias }} </h2>
+					<p> Name: {{ show.name }} </p>
+					<p> Email: {{ show.email }} </p>
+					<p> Total Reviews: {{ count }} </p>
+				</div>
+				<div id="userReviews">
+					<h4> Posted Reviews on the following books:</h4>
+					{% for element in review %}
+					<p> <a href = "/books/{{ element.book_reviewed.id }}"> {{ element.book_reviewed.title }}  </a> </p>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

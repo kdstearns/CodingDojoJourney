@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'quote_app/quotes.css'%}">
+		<title> Login/Registration </title>
+	</head>
+	<body>
+		<div id='container'>
+
+			{% if messages %}
+  				{% for message in messages %}
+     				<h3> {{ message }} </h3>
+  				{% endfor %}
+			{% endif %}
+
+			<div id='register'>
+				<h2>Register</h2>
+				<form action='/register', method='POST'>
+				{% csrf_token %} 
+					<label> Name: </label> <input type="text" name="name">
+					<label> Alias: </label> <input type="text" name="alias">
+					<label> E-mail Address: </label> <input type="text" name="email">
+					<label> Password: </label> <input type="password" name="password">
+					<label> Confirm Password: </label> <input type="password" name="confirm">
+					<label> Date of Birth: </label> <input type="date" name="birthday">
+					<input type="submit" value="Register">
+				</form>
+			</div>
+
+			<div id='login'>
+				<h2>Log in</h2>
+				<form action='/login', method='POST'>
+				{% csrf_token %}	
+					<label> E-mail Address: </label> <input type="text" name="email">
+					<label> Password: </label> <input type="password" name="password">
+					<input type="submit" value="Login">
+				</form>
+			</div>
+	</body>
+</html>

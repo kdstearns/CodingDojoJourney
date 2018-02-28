@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'REST_app/usersRest.css' %}">
+		<title> Edit User </title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="content">
+				
+					<h2> Edit User {{ edit.id }} </h2>
+					<form action="update" method="POST">
+					{% csrf_token %}
+						<label> First name: </label>
+						<input type="text" name="first">
+						<label> Last name: </label>
+						<input type="text" name="last">
+						<label> Email: </label>
+						<input type="text" name="email">
+						<input type="submit" value="Update">
+					</form>
+					<a href="/users/{{ edit.id }}"> Show </a> | <a href="/users"> Go Back </a>
+				
+			</div>
+		</div>
+	</body>
+</html>

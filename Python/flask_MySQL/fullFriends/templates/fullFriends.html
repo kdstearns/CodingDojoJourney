@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> All my Friends </title>
+</head>
+<body>
+<!-- 	{{ all_friends }} -->
+	<h1> Friends: </h1>
+
+	
+	<table>
+		<thead>
+			<tr>
+				<th> Name </th>
+				<th> Age </th>
+				<th> Friend Since </th>
+				<th>  </th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for friend in all_friends: %}
+			<tr>
+				<td> {{ friend['name'] }} </td>
+				<td> {{ friend['age'] }} </td>
+				<td> {{ friend['created_at'].strftime('%B %-d') }} </td>
+				<td> {{ friend['created_at'].strftime('%Y') }} </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<h1> Add a Friend:</h1>
+	<form action='/friends' method='POST'>
+		<label for="name"> Name: <input type="text" name="name"> </label>
+		<label for="age"> Age: <input type="text" name="age"> </label>
+		<input type="submit" value="Add" name='created'>
+	</form>
+</body>
+</html>

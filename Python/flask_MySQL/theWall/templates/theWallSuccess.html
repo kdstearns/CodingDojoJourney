@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='theWall.css') }}">
+		<title>The Wall</title>
+	</head>
+	<body>
+		<div id='container'>
+			<div id='content'>
+				<h2>SUCCESS!</h2>
+				<h4>Welcome {{ session['name'] }}! </h4>
+				<form action="/home" method='POST'>
+					<input type="submit" value="Login">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

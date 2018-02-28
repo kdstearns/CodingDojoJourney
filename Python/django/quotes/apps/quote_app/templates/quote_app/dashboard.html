@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'quote_app/quotes.css'%}">
+		<title> Your Dashboard </title>
+	</head>
+	<body>
+		<div id='container'>
+			<div id='content'>
+				<div id="header">
+					<h2> Welcome {{ show.alias }}!</h2>
+					<a href="/logout"> Logout </a>
+				</div>
+				<div id ="left_side">
+					<div class = "sub_content">
+
+						<h4> Quotable Quotes </h4>
+						{% for element in allQuote %}
+						<div class = "quotes">
+							<!-- dynamic content here with quoted_by, quote, and posted by -->
+							<p> {{ element.quoted_by }}: {{ element.quote }} </p>
+							<h6> Posted by: <a href="userposts/{{ element.posted_by.id }}"> {{ element.posted_by.alias }} </a> </h6>
+							<form action="/addlist/{{ element.id }}" method="POST">
+							{% csrf_token %} 
+								<input type="submit" value="Add to my List">
+							</form>
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+				<div id ="right_side">
+					<div class = "sub_content">
+
+						<h4> Your Favorites </h4>
+						{% for element in faveQuote %}
+						<div class = "quotes">
+							<!-- dynamic content here with quoted_by, quote, and posted by -->
+							<p> {{ element.quoted_by }}: {{ element.quote }} </p>
+							<h6> Posted by: <a href="/userposts/{{ element.posted_by.id }}"> {{ element.posted_by.alias }} </a> </h6>
+							<form action="/removelist/{{ element.id }}" method="POST">
+							{% csrf_token %} 
+								<input type="submit" value="Remove from my List">
+							</form>
+						</div>
+						{% endfor %}
+
+					</div>
+
+					<div id="add">
+						{% if messages %}
+		  					{% for message in messages %}
+		     					<h3> {{ message }} </h3>
+		  					{% endfor %}
+						{% endif %}
+
+						<h4> Contribute a Quote: </h4>
+						<form action="/addquote" method="POST">
+						{% csrf_token %} 
+							<label> Quoted By: <input type="text" name="quoted_by"> </label>
+							<label> Message: <input type="textarea" name="quote"> </label>
+							<input type="submit" value="Submit">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

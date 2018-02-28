@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='goldCSS/ninjaGold.css')}}">
+		<title> Get 'yo money! </title>
+	</head>
+	<body>
+		<div id="container">
+			<h1>ARE YOU A WINNER???</h1>
+			<div id="bank">
+				<h4> Your Gold: </h4> 
+				<p> {{ session['goldMoney'] }}</p>
+				<form action="/reset" method="post">
+					<input type="submit" value="Start Over!">
+				</form>
+			</div>
+			<div id="content">
+				<div class="places">
+					<h3> Farm </h3>
+					<h5> (earns 10-20 gold) </h5>
+					<form action='/process_money' method='post'>
+						<input type="hidden" name="building" value="farm" />
+						<input type="submit" value="Find Gold!" />
+					</form>
+				</div>
+
+				<div class="places">
+					<h3> Cave </h3>
+					<h5> (earns 5-10 gold) </h5>
+					<form action='/process_money' method='post'>
+						<input type="hidden" name="building" value="cave" />
+						<input type="submit" value="Find Gold!" />
+					</form>
+				</div>
+
+				<div class="places">
+					<h3> House </h3>
+					<h5> (earns 2-5 gold) </h5>
+					<form action='/process_money' method='post'>
+						<input type="hidden" name="building" value="house" />
+						<input type="submit" value="Find Gold!" />
+					</form>
+				</div>
+
+				<div class="places">
+					<h3> Casino </h3>
+					<h5> (earns/takes 0-50 gold) </h5>
+					<form action='/process_money' method='post'>
+						<input type="hidden" name="building" value="casino" />
+						<input type="submit" value="Find Gold!" />
+					</form>
+				</div>
+			</div>
+			<h4> Activites: </h4>
+			<div id="activities"> 
+				{% for element in session['split'] %}
+				<p>{{ element }}</p>
+				{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>

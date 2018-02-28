@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='theWall.css') }}">
+		<title>The Wall</title>
+	</head>
+	<body>
+		<div id='container'>
+			{% with messages = get_flashed_messages() %}
+   				{% if messages %}
+      				{% for message in messages %}
+         				<h3> {{ message }} </h3>
+      				{% endfor %}
+   				{% endif %}
+			{% endwith %} 
+			<div id='register'>
+				<h2>Register</h2>
+				<form action='/register', method='POST'> 
+					<label> First Name: </label> <input type="text" name="first_name">
+					<label> Last Name: </label> <input type="text" name="last_name">
+					<label> E-mail Address: </label> <input type="text" name="email">
+					<label> Password: </label> <input type="password" name="password">
+					<label> Confirm Password: </label> <input type="password" name="confirm">
+					<input type="submit" value="Register">
+				</form>
+			</div>
+
+			<div id='login'>
+				<h2>Log in</h2>
+				<form action='/login', method='POST'>
+					<label> E-mail Address: </label> <input type="text" name="email">
+					<label> Password: </label> <input type="password" name="password">
+					<input type="submit" value="Login">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

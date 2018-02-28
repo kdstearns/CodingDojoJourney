@@ -1,0 +1,178 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#wrapper{
+	background-color: white;
+	width: 1000px;
+	margin: auto;
+	padding: 15px;
+}
+
+#header{
+	background-color: #e5e5e5;
+	margin: auto;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgrey;
+}
+
+#header img{
+	height: 100%;
+	width: 75px;
+}
+
+.menu{
+	vertical-align: top;
+	height: 100%;
+	padding: 20px 20px 20px 20px;
+	background-color: #e5e5e5;
+	border-color: lightgrey;
+	border-style: groove;
+	font-family: "Comic Sans", Arial, Sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#search{
+	display: inline-block;
+	vertical-align: top;
+	height: 65px;
+	margin-left: 125px;
+	padding-top: 5px;
+}
+
+#search input[type=text]{
+	margin: 15px 0px 15px 100px;
+	font-size: 14px;
+	height: 25px;
+	vertical-align: top;
+	border-radius: 5px;
+}
+
+#search button[type=submit]{
+	background-image: url("menu_icon2.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 15px 0px 15px 0px;
+	height: 28px;
+	width: 35px;
+	border-radius: 5px;
+}
+
+#main_content{
+	background-color: white;
+	margin: auto;
+	padding: 15px;
+}
+
+#main_content img{
+	display: block;
+	width: 100%;
+}
+
+#main_content div{
+	padding: 10px 5px 10px 0px;
+	background-color: #333333;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.nav{
+	display: inline;
+	padding-left: 15px;
+	color: lightblue;
+	font-family: "Comic Sans", Arial, Sans-serif;
+}
+
+.nav span{
+	margin: 0px 15px 0px 20px;
+	color: lightgrey;
+}
+
+#main_content h1{
+	display: inline;
+	margin: 50px 0px 50px 75px;
+	color: #333333;
+}
+
+#main_content h1 hr{
+	display: inline;
+	height: 10vh;
+	width: 1px;
+	margin-left: 25px;
+}
+
+#main_content button{
+	padding: 5px 25px 5px 25px;
+	background-color: #4b84ab;
+	color: white;
+	font-size: 22px;
+	margin: 50px 0px 50px 50px;
+	border-radius: 5px;
+}
+
+#sub_content{
+	background-color: white;
+	margin: auto;
+	padding: 5px 0px 5px 0px;
+}
+
+.resources{
+	background-color: white;
+	display: table-cell;
+	width: 24%;
+	padding: 5px 10px 5px 10px;
+}
+
+.resources h3{
+	display:inline;
+}
+
+.preview{
+	display: block;
+	width: 100%;
+	margin: 15px 0px 15px 0px;
+}
+
+.resources button{
+	background-color: #5babe4;
+	display: block;
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+	vertical-align: bottom;
+	border-radius: 5px;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	object-position: center;
+}
+
+#footer{
+	background-color: white;
+	margin: auto;
+	padding: 15px;
+}
+
+.information{
+	background-color: white;
+	display: table-cell;
+	width: 250px;
+	padding: 0px 10px 0px 10px;
+}
+
+.information hr{
+	margin: 15px 0px 15px 0px;
+}
+
+.information h6{
+	margin-bottom: 10px;
+}
+
+#contactus{
+	margin-top: 15px;
+	font-size: 10px;
+	font-style: "Comic Sans", Arial, sans-serif;
+}

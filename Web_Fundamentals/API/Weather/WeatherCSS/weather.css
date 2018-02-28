@@ -1,0 +1,14 @@
+#container{
+	width: 970px;
+	margin: auto;
+}
+
+input{
+	font-size: 18px;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+input[type=submit]{
+	border-radius: 5px;
+}

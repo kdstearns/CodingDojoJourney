@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='theWall.css') }}">
+		<title>The Wall</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1>The Wall</h1>
+				<h5>Welcome {{ session['name'] }} </h5>
+				<a href="/logout">log off</a>
+			</div>
+			<div id="content">
+				<h3>Post a message</h3>
+				<form action="/post1" method="POST">
+					<input id="messagebox" type="text" name="message">
+					<input id="messagebutton" type="submit" value="Post a message">
+				</form>
+				<div id="msglog">
+					{% for messages in all_msgs %}
+		  				<p class="names"> {{ messages['full_name'] }} {{ messages['created'] }} {{ messages['msg_id'] }}: </p>
+		     			<p id="message_words"> {{ messages['message'] }} </p>
+		  				
+			  			<div id="commentlog">
+			  				{% for comments in all_comments %}
+			  					{% if messages['msg_id'] == comments['msg_id'] %}
+					  				<p class="names"> {{ comments['full_name'] }} {{ comments['created'] }} {{ comments['message_id'] }}: </p>
+					     			<p id="comment_words"> {{ comments['comment'] }} </p>
+				     			{% endif %}
+				  			{% endfor %}
+			  			</div>
+
+			  			<h4>Post a comment</h4>
+						<form action="/post2/{{messages['msg_id']}}" method="POST">
+							<input id="commentbox" type="text" name="comment">
+							<input id="commentbutton" type="submit" value="Post a comment">
+						</form>
+	  				{% endfor %}
+  				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Registration Form</title>
+	</head>
+	<body>
+		<h2>Fill out your information to register for the event!</h2>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<ul>	
+				{% for message in messages %}
+					<strong><li> {{ message }} </li></strong>
+				{% endfor %}
+			</ul>	
+			{% endif %}
+		{% endwith %}
+
+		<form action='/process' method='POST'>
+			Email: <input type="text" name="email">
+			First Name: <input type="text" name="first">
+			Last Name: <input type="text" name="last">
+			Password: <input type="password" name="password">
+			Confirm Password: <input type="password" name="confirm">
+			<input type="submit" name="submit" value="Register">
+		</form>
+	</body>
+</html>

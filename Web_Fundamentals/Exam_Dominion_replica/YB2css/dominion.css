@@ -1,0 +1,219 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+}
+
+body{
+	width: 1250px;
+	margin: auto;
+}
+
+#wrapper{
+	width: 100%;
+	height: 800px;
+}
+
+#header{
+	background-color: #e6e2de;
+	padding: 10px 10px 0px 10px;
+}
+
+#header img{
+	vertical-align: top;
+}
+
+#logo{
+	height: 60px;
+}
+
+#corporate{
+	background: linear-gradient(#2a66b0, #1a467b);
+	padding: 3px 50px 3px 10px;
+	margin-left: 500px;
+	border: 1px solid #7891a4;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	color: white;
+	font-size: 12px;
+}
+
+#header input[type=text]{
+	padding: 5px 90px 5px 10px;
+	margin: 0px 15px 0px 50px;
+	font-size: 12px;
+	border-radius: 5px;
+}
+
+#navbar{
+	margin: 10px 0px 0px 550px;
+}
+
+#navbar p{
+	display: inline;
+	margin: 0px 0px 0px 10px;
+	color: #484747;
+}
+
+#navbar hr{
+	display: inline;
+	height: 15vh;
+	width: 1px;
+	margin: 0px 5px 0px 10px;
+}
+
+#main_content{
+	background: linear-gradient(#3773bd, #1f436c);
+	padding: 0px 2px 5px 2px;
+}
+
+#sidebar{
+	display: inline-block;
+	vertical-align: top;
+	padding: 15px 15px 10px 15px;
+	margin: 0px 20px 0px 10px;
+}
+
+#sidebar form{
+	margin-bottom: 15px;
+	background-color: #d4dde6;
+	padding: 0px 0px 10px 0px;
+	border: 1px solid #d8e1ea;
+}
+
+.formtitle{
+	background: linear-gradient(#153b69, #2964ad);
+	color: white;
+	padding: 2px 5px 2px 5px;
+}
+
+#sidebar form label{
+	display: block;
+	margin-top: 5px;
+	margin-left: 15px;
+	padding-top: 5px;
+	color: #323467;
+}
+
+.login{
+	display: block;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 0px 5px 15px;
+	border-radius: 5px;
+}
+
+#sidebar form input[type="submit"]{
+	display: inline-block;
+	background: linear-gradient(#4f4f4f, #343434, #8c8c8c);
+	padding: 5px 20px 5px 20px;
+	margin: 10px 0px 0px 15px;
+	border-radius: 5px;
+	font-size: 16px;
+	color: white;
+}
+
+#sidebar form a{
+	text-decoration: none;
+	color: #4270fb;
+}
+
+.forgot{
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+#sidebar button{
+	display: block;
+	width: 100%;
+	background: linear-gradient(#153b69, #2a65af);
+	padding: 10px 25px 10px 25px;
+	font-size: 20px;
+	color: white;
+}
+
+#preview{
+	display: inline-block;
+}
+
+#preview img{
+	height: 370px;
+}
+
+#main_content h4{
+	background-color: #d4dbe4;
+	margin: 15px 0px 0px 0px;
+	padding: 10px 0px 10px 25px;
+	color: #3b6afd;
+}
+
+#main_content h4 span{
+	color: #333333;
+}
+
+#sub_content{
+	background-color: #1f436c;
+	padding: 0px 25px 25px 25px;
+}
+
+.resources{
+	display: inline-block;
+	background-color: #ffffff;
+	border: 2px solid #50667a;
+	width: 27%;
+	height: 100px;
+	margin: 0px 0px 0px 35px;
+	padding: 10px 10px 10px 10px;
+	vertical-align: top;
+}
+
+.resources img{
+	display: inline-block;
+	vertical-align: center;
+	height: 100%;
+	width: 30%;
+}
+
+.info{
+	display: inline-block;
+	color: blue;
+	width: 65%;
+	vertical-align: top;
+	margin-left: 10px;
+}
+
+.title{
+	color: black;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#footer{
+	background-color: #d9d4cd;
+	padding: 5px 10px 5px 5px;
+}
+
+#footer p{
+	display: inline;
+	padding: 0px 0px 0px 10px;
+}
+
+#footer hr{
+	display: inline;
+	height: 15vh;
+	width: 1px;
+	margin: 0px 5px 0px 10px;
+}
+
+#footer span{
+	font-weight: bold;
+}
+
+#NYSE{
+	display: inline;
+	margin-left: 240px;
+}
+
+#stock{
+	color: #339937;
+}

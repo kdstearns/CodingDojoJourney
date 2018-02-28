@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'REST_app/usersRest.css'%}">
+		<title> All Users </title>
+	</head>
+	<body>
+		<div id="container">
+			<h2> Users </h2>
+			<table>
+				<thead>
+					<th> ID </th>
+					<th> Full Name </th>
+					<th> Email </th>
+					<th> Created At </th>
+					<th> Actions </th>
+				</thead>
+				<tbody>
+					{% for element in all %}
+					<tr>
+						<td> {{ element.id }} </td>
+						<td> <a href="/users/{{ element.id }}"> {{ element.first_name }} {{ element.last_name }} </a> </td>
+						<td> {{ element.email }} </td>
+						<td> {{ element.created_at }} </td>
+						<td> <a href="/users/{{ element.id }}"> Show </a> | <a href="/users/{{ element.id }}/edit"> Edit </a> | <a href="/users/{{ element.id }}/destroy"> Delete </a> </td>	
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<a href="/users/new"> Add a new user </a>
+		</div>
+	</body>
+</html>

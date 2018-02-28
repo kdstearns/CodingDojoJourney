@@ -1,0 +1,27 @@
+#container{
+	width: 1500px;
+	margin: auto;
+}
+
+#pokeImgs{
+	display: inline-block;
+	border: 2px solid black;
+	width: 800px;
+	padding: 15px;
+	margin: 15px;
+}
+
+#info{
+	display: inline-block;
+	border: 25px solid red;
+	width: 250px;
+	height: 500px;
+	margin: 15px;
+	vertical-align: top;
+	text-align: center;
+}
+
+li{
+	list-style-type: none;
+	margin-left: -35px;
+}
