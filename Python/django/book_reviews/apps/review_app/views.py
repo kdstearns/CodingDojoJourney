@@ -62,8 +62,8 @@ def user_reviews(request, id):
 
 def book_reviews(request, id):
 	thisBook = Book.objects.get(id = id)
-	bookReviews = Review.objects.filter(book_reviewed = id)
-	bookAuthor = Author.objects.get(books_written = id)
+	bookReviews = Review.objects.filter(book_reviewed = thisBook)
+	bookAuthor = Author.objects.filter(books_written = thisBook)
 	# print thisBook
 	# print bookReviews
 	# print bookAuthor
@@ -122,8 +122,8 @@ def add_book(request):
 				# print author
 				newBook = Book.objects.create(title = request.POST['title'])
 				newAuthor = Author.objects.create(name = author, books_written = newBook)
-				user = User.objects.get(id = request.session['id'])
-				newReview = Review.objects.create(review = request.POST['review'], rating = request.POST['rating'], book_reviewed = newBook, reviewed_by = user)
+				userReview = User.objects.get(id = request.session['id'])
+				newReview = Review.objects.create(review = request.POST['review'], rating = request.POST['rating'], book_reviewed = newBook, reviewed_by = userReview)
 
 				return redirect('/success')
 			else: 
@@ -131,7 +131,7 @@ def add_book(request):
 				# print author
 				newBook = Book.objects.create(title = request.POST['title'])
 				userReview = User.objects.get(id = request.session['id'])
-				Review.objects.create(review = request.POST['review'], rating = request.POST['rating'], book_reviewed = newBook, reviewed_by = user)
+				Review.objects.create(review = request.POST['review'], rating = request.POST['rating'], book_reviewed = newBook, reviewed_by = userReview)
 				
 				return redirect('/success')
 			

@@ -49,9 +49,6 @@ class BookManager(models.Manager):
 
 		if len(postData['title']) < 1 or len(postData['review']) < 1 or len(postData['rating']) < 1 :
 			book['blank'] = "All fields must be completed."
-
-		if not NAME_REGEX.match(postData['add_author']):
-			book['name'] = "Author name cannot contain numbers."
 		
 		bookVal = Book.objects.filter(title = postData['title'])
 		if len(bookVal) != 0:
@@ -62,6 +59,9 @@ class BookManager(models.Manager):
 
 		if len(postData['author']) > 1 and len(postData['add_author']) > 1:
 			book['author'] = "You must either choose an author or add a new one."
+
+		# if len(postData['add_author']) > 0 and not NAME_REGEX.match(postData['add_author']):
+		# 	book['name'] = "Author name cannot contain numbers."
 
 		authorVal = Author.objects.filter(name = postData['add_author'])
 		if len(authorVal) != 0:

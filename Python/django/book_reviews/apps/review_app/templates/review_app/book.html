@@ -17,7 +17,7 @@
 					
 					<div id = "info">
 						<h2> {{ book.title }} </h2>
-						<p> Author: {{ author.name }} </p>
+						<p> Author: {{ author.0.name }} </p>
 						<h4> Reviews: </h4>
 							{% for element in review %}
 							<div id ="list">
