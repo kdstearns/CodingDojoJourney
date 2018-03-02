@@ -37,13 +37,13 @@ class UserManager(models.Manager):
 		user = User.objects.filter(email = postData['email'])
 		# print user
 		# print user[0].password
-		if not bcrypt.checkpw(postData['password'].encode(), user[0].password.encode()):
-			match['pw'] = "Your password is incorrect."
-
 		if len(user) == 0:
-			match['address'] = "Your email is not in our database."
+			match['username'] = "This username does not exist, please register."
+			return match
 
-		return match
+		if not bcrypt.checkpw(postData['password'].encode(), user[0].password.encode()):
+			match['pw'] = "Login invalid."
+			return match
 
 class QuoteManager(models.Manager):
 	def quote_validator(self, postData):
