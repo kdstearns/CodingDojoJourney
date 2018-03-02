@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'session_app/sessionWords.css'%}">
+		<title>Session Words</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="create">
+				<form action='/add' method='POST'>
+					{% csrf_token %}
+					<h2> Add a new word </h2>
+					<input type="text" name="word">
+					<h4> Choose Color: </h4>
+					<label><input type="radio" name="color" value="red"> Red </label>
+					<label><input type="radio" name="color" value="green"> Green </label>
+					<label><input type="radio" name="color" value="blue"> Blue </label>
+					<input type="hidden" name="big" value="False">
+					<label><input id="big" type="checkbox" name="big" value="True"> show in BIG fonts </label>
+					<input id="add" type="submit" value="Add to Session">	
+				</form>
+			</div><!--
+
+		 --><div id="show">
+				<form action='/clear' method='POST'>
+					{% csrf_token %}
+					<input id="clear" type="submit" value="Clear Session">
+				</form>
+				<!-- show dynamic content here -->
+				<ul>
+				{% for element in request.session.content %}
+					<li class="{{ element.color }} {{ element.big }}"> {{ element.word }} <span> {{ element.datetime }} </span> </li>
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
